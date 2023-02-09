@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+                
+            }
+        post{
+        
+        success{
+            slackSend(message:"build done successfully , here is the url ${BUILD_URL}")
+        }    
+        failure{
+            slackSend(message:"buid failed , here is the url ${BUILD_URL}" )
+        }
+            
+        }
+    
+        }
+    }
+}
