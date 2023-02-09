@@ -7,7 +7,7 @@
             stage('CI') {
                 steps {
                     
-                    git url: 'https://github.com/AlaaiDwidar/jenkins_nodejs_example', branch: 'main'
+                    git url: 'https://github.com/AlaaiDwidar/jenkins_nodejs_example', branch: 'master'
                     
                     
                     withCredentials([usernamePassword(credentialsId: 'PASS1', passwordVariable: 'PASS', usernameVariable: 'USER')]){
